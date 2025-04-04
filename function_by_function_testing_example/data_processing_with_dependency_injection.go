@@ -1,4 +1,4 @@
-package _function_by_function_testing_example
+package function_by_function_testing_example
 
 import (
 	"sort"
