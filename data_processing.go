@@ -36,9 +36,6 @@ func calculateAverage(sum int, count int) float64 {
 func calculateMedian(data []int) float64 {
 	sort.Ints(data)
 	n := len(data)
-	if n == 0 {
-		return 0
-	}
 	if n%2 == 0 {
 		return float64(data[n/2-1]+data[n/2]) / 2
 	}
