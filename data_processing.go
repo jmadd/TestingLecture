@@ -36,14 +36,27 @@ func calculateAverage(sum int, count int) float64 {
 func calculateMedian(data []int) float64 {
 	sort.Ints(data)
 	n := len(data)
-	if n%2 == 0 {
-		return float64(data[n/2-1]+data[n/2]) / 2
+	if n == 0 {
+		return 0
 	}
+	if n%2 == 0 { return float64(data[n/2-1]+data[n/2]) / 2 }
 	return float64(data[n/2])
 }
 
+// Pulled from "Jira product requirements":
+// Should return "roundOff-ed" avg, rounded median divided by 2, or 0
+// whichever is biggest.
 func optimalRepresentation(average float64, median float64) int {
-	return max(roundOff(average), int(median), 0)
+	//return max(roundOff(average), int(median), 0)
+	newAvg := roundOff(average)
+	newMedian := int(median)
+	if newAvg < 0 && newMedian < 0 {
+		return 0
+	} else if newAvg < newMedian {
+		return newMedian / 2
+	} else {
+		return newAvg
+	}
 }
 
 func roundOff(number float64) int {

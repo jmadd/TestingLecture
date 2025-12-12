@@ -56,9 +56,9 @@ func TestProcessDataFinished(t *testing.T) {
 		assert.Equal(t, expected, result)
 	})
 
-	t.Run("Returns average when average and median are positive and median is higher", func(t *testing.T) {
+	t.Run("Returns median when average and median are positive and median is higher", func(t *testing.T) {
 		data := []int{1, 12, 13, 14}
-		expected := 25
+		expected := 12
 		result := ProcessData(data)
 		assert.Equal(t, expected, result)
 	})
