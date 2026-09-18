@@ -10,10 +10,11 @@ func main() {
 	flag.Parse()
 
 	if *count == 0 {
-		fmt.Println("No documents found in this folder.")
+		fmt.Println("No attachments found in this folder.")
 		return
 	}
 
 	fmt.Println("Your file is ready to download.")
 	fmt.Println("The document was archived successfully.")
+	fmt.Println("Upload a document to continue.")
 }
