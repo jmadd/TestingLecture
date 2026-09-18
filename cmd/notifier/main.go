@@ -10,10 +10,11 @@ func main() {
 	flag.Parse()
 
 	if *pending == 0 {
-		fmt.Println("No documents are waiting for review.")
+		fmt.Println("No attachments are waiting for review.")
 		return
 	}
 
 	fmt.Println("Your file has been shared with the team.")
 	fmt.Println("Open the document to continue.")
+	fmt.Println("Attach a document to notify the team.")
 }
